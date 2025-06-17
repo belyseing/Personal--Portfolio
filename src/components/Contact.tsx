@@ -185,7 +185,7 @@ const Contact: React.FC = () => {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          Ready to bring your ideas to life? I'm just a message away!
+          Ready to bring your ideas to life? I&#39;m just a message away!
         </p>
 
         <div className="flex flex-col md:flex-row gap-12 mt-14">
@@ -195,7 +195,7 @@ const Contact: React.FC = () => {
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
               }`}
             >
-              Let's Connect!
+              Let&#39;s Connect!
             </h3>
 
             <div className="space-y-6">

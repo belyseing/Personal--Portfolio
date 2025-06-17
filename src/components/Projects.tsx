@@ -196,7 +196,7 @@ const Projects: React.FC = () => {
             </a>
           </div>
           <p className="text-gray-500 mt-6 text-sm">
-            Interested in working together? Let's create something amazing.
+            Interested in working together? Let&#39;s create something amazing.
           </p>
         </div>
       </div>

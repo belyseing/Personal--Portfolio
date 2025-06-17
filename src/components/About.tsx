@@ -125,7 +125,7 @@ const About = () => {
               }`}
             >
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-                I'm <span className="text-teal-500 font-semibold">Ingabire Belyse</span>, a passionate Web Developer and UI/UX Designer based in{" "}
+                I&#39;m <span className="text-teal-500 font-semibold">Ingabire Belyse</span>, a passionate Web Developer and UI/UX Designer based in{" "}
                 <span className="text-teal-700 font-semibold">Kigali, Rwanda</span>.
               </p>
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
