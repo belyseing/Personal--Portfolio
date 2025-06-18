@@ -30,7 +30,7 @@ const About = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen relative overflow-hidden px-0 py-20"
+      className="min-h-screen relative overflow-hidden px-4 sm:px-6 lg:px-9 py-20"
       id="about"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900">
@@ -38,8 +38,8 @@ const About = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(0,191,255,0.05),transparent_60%)] opacity-20"></div>
       </div>
 
-      <div className="relative z-10">
-        <div className="mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl w-full mx-auto">
+        <div className="mb-12 sm:mb-16 lg:mb-20 text-center">
           <div
             className={`transform transition-all duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
@@ -50,13 +50,13 @@ const About = () => {
               <span className="text-teal-400"> Me</span>
               <div className="absolute -bottom-1 left-0 w-24 sm:w-32 lg:w-36 h-1 bg-gradient-to-r from-teal-400 to-transparent rounded-full animate-expand"></div>
             </h2>
-            <p className="text-lg sm:text-xl text-gray-700 font-light">
+            <p className="text-lg sm:text-xl text-gray-500 font-light">
               From Curiosity to Mastery
             </p>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-20 items-center px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-20 items-center lg:px-8">
           {/* IMAGE SIDE */}
           <div
             className={`relative transform transition-all duration-1000 delay-300 order-2 lg:order-1 ${
@@ -82,23 +82,24 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              {/* Floating Labels */}
-              <div className="absolute -right-1 top-1/4 bg-gradient-to-r from-emerald-500 to-cyan-500 backdrop-blur-sm rounded-md p-2 border border-emerald-400/50 shadow-lg">
+
+              {/* Floating Labels - Added more spacing from corners */}
+              <div className="absolute right-4 sm:right-6 top-1/4 bg-gradient-to-r from-emerald-500 to-cyan-500 backdrop-blur-sm rounded-md p-2 border border-emerald-400/50 shadow-lg">
                 <div className="text-center">
                   <div className="text-xs sm:text-sm md:text-lg font-bold text-black">10+</div>
                   <div className="text-[10px] sm:text-xs text-black/80">Projects</div>
                 </div>
               </div>
 
-              <div className="absolute -left-1 bottom-1/4 bg-black/90 backdrop-blur-sm rounded-md p-2 border border-cyan-400/50 shadow-lg">
+              <div className="absolute left-4 sm:left-6 bottom-1/4 bg-black/90 backdrop-blur-sm rounded-md p-2 border border-cyan-400/50 shadow-lg">
                 <div className="text-center">
                   <div className="text-xs sm:text-sm md:text-lg font-bold text-cyan-400">1+</div>
                   <div className="text-[10px] sm:text-xs text-gray-300">Years</div>
                 </div>
               </div>
 
-              <div className="absolute top-1/2 -right-1 sm:-right-2 w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full animate-bounce delay-500"></div>
-              <div className="absolute top-1/3 -left-1 sm:-left-2 w-2 h-2 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-full animate-bounce delay-700"></div>
+              <div className="absolute top-1/2 right-3 sm:right-4 w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full animate-bounce delay-500"></div>
+              <div className="absolute top-1/3 left-3 sm:left-4 w-2 h-2 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-full animate-bounce delay-700"></div>
               <div className="absolute bottom-1/2 right-1/4 w-2 h-2 bg-emerald-400/60 rounded-full animate-ping delay-300"></div>
             </div>
           </div>
@@ -111,7 +112,7 @@ const About = () => {
               }`}
             >
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-                I&#39;m <span className="text-teal-500 font-semibold">Ingabire Belyse</span>, a
+                I&apos;m <span className="text-teal-500 font-semibold">Ingabire Belyse</span>, a
                 passionate Web Developer and UI/UX Designer based in{" "}
                 <span className="text-teal-700 font-semibold">Kigali, Rwanda</span>.
               </p>
@@ -133,7 +134,7 @@ const About = () => {
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
                 Core Expertise
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
                 {[
                   "Frontend Development",
                   "React & Next.js",
@@ -142,8 +143,8 @@ const About = () => {
                   "TypeScript",
                   "Node.js & APIs",
                 ].map((skill) => (
-                  <div key={skill} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full flex-shrink-0"></div>
+                  <div key={skill} className="flex items-start lg:items-center space-x-2">
+                    <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full flex-shrink-0 mt-2 lg:mt-0"></div>
                     <span className="text-gray-400 text-base leading-tight">{skill}</span>
                   </div>
                 ))}

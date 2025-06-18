@@ -38,7 +38,7 @@ const projects: Project[] = [
   {
     title: "Book Management App",
     description:
-      "An easy-to-use tool for adding, updating, and organizing books — perfect for keeping track of what you’ve read.",
+      "An easy-to-use tool for adding, updating, and organizing books — perfect for keeping track of what you've read.",
     image: "/books.png",
     techStack: ["TypeScript", "Javascript", "Tailwind CSS"],
     link: "https://book-management-app-fawn.vercel.app/",
@@ -92,9 +92,9 @@ const Projects: React.FC = () => {
               <div className="absolute -bottom-1 left-0 w-36 h-1 bg-gradient-to-r from-teal-400 to-transparent rounded-full"></div>
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Discover my latest work showcasing innovative solutions, cutting-edge technologies,
-            and exceptional user experiences across various domains.
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+            Discover my latest work showcasing innovative solutions and 
+            exceptional user experiences.
           </p>
         </div>
 

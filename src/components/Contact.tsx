@@ -50,7 +50,6 @@ const Contact: React.FC = () => {
     };
   }, []);
 
-
   useEffect(() => {
     const generatedDots = Array.from({ length: 15 }).map(() => ({
       left: `${Math.random() * 100}%`,
@@ -141,14 +140,22 @@ const Contact: React.FC = () => {
     <section
       ref={sectionRef}
       id="contact"
-      className="relative py-20 flex items-center justify-center p-6 scroll-mt-20 text-white overflow-hidden"
+      className="relative py-20 flex items-center justify-center p-6 scroll-mt-20 text-white overflow-hidden bg-gradient-to-br from-gray-900 via-slate-800 to-gray-950"
     >
-     
-      <div className="absolute inset-0 bg-gradient-to-br bg-gray-950"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(139,69,19,0.15),transparent)] opacity-60 animate-pulse"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(75,85,99,0.2),transparent)] opacity-40"></div>
+      {/* Background layers matching home page */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,from-teal-900/20,via-transparent,to-transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,from-indigo-800/15,via-transparent,to-transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,from-emerald-800/18,via-transparent,to-transparent)]" />
+      <div
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px)",
+          backgroundSize: "30px 30px",
+        }}
+      />
 
-      
+      {/* Animated dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {dots.map((dot, i) => (
           <div
@@ -164,7 +171,7 @@ const Contact: React.FC = () => {
         ))}
       </div>
 
-    
+      {/* Content */}
       <div className="relative z-10">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h2
@@ -212,7 +219,7 @@ const Contact: React.FC = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900/50 backdrop-blur-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
                     placeholder="Belyse Ingabire"
                   />
                   {errors.name && (
@@ -233,7 +240,7 @@ const Contact: React.FC = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900/50 backdrop-blur-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
                     placeholder="belyseing@gmail.com"
                   />
                   {errors.email && (
@@ -254,7 +261,7 @@ const Contact: React.FC = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                  className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900/50 backdrop-blur-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="Your project"
                 />
                 {errors.subject && (
@@ -274,7 +281,7 @@ const Contact: React.FC = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900 text-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                  className="w-full p-3 border border-gray-700 rounded-lg bg-gray-900/50 backdrop-blur-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-teal-500"
                   rows={5}
                   placeholder="Tell me about your project ..."
                 />
@@ -293,9 +300,9 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          
+          {/* Contact Information Card */}
           <div className="md:w-2/5 md:mt-20">
-            <div className="bg-gray-800 p-8 rounded-lg shadow-md">
+            <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800/50 p-8 rounded-lg shadow-md">
               <h3
                 className={`text-2xl font-bold text-white mb-6 transform transition-all duration-1000 delay-600 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
@@ -369,7 +376,7 @@ const Contact: React.FC = () => {
               </address>
 
               <div
-                className={`border-t border-gray-700 my-6 transform transition-all duration-1000 delay-900 ${
+                className={`border-t border-gray-700/50 my-6 transform transition-all duration-1000 delay-900 ${
                   isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
               ></div>
