@@ -30,18 +30,15 @@ const About = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen relative overflow-hidden pl-6 py-20 "
+      className="min-h-screen relative overflow-hidden px-0 py-20"
       id="about"
     >
-     
       <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(0,255,127,0.1),transparent_60%)] opacity-30"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(0,191,255,0.05),transparent_60%)] opacity-20"></div>
       </div>
 
- 
       <div className="relative z-10">
-       
         <div className="mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-6 lg:px-8 text-center">
           <div
             className={`transform transition-all duration-1000 ${
@@ -59,63 +56,54 @@ const About = () => {
           </div>
         </div>
 
-       
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-20 items-center px-4 sm:px-6 lg:px-8">
-         
+          {/* IMAGE SIDE */}
           <div
             className={`relative transform transition-all duration-1000 delay-300 order-2 lg:order-1 ${
               isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
             }`}
           >
-            <div className="relative w-full max-w-[250px] sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto">
-            
-              <div className="absolute -top-2 -right-2 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 rounded-full blur-xl animate-pulse"></div>
-             
-              <div className="absolute -bottom-2 -left-2 w-14 h-14 sm:w-20 sm:h-20 md:w-28 md:h-28 bg-gradient-to-r from-cyan-400/10 to-emerald-400/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
-
+            <div className="relative w-full">
               <div className="relative w-full aspect-square">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 rounded-2xl sm:rounded-3xl blur-sm"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/60 to-cyan-500/60 rounded-2xl sm:rounded-3xl p-1">
-                  <div className="w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-xl sm:rounded-2xl p-2 sm:p-3 lg:p-4">
-                    <div className="relative w-full h-full rounded-lg sm:rounded-xl lg:rounded-2xl overflow-hidden bg-gradient-to-br from-emerald-400/5 to-cyan-400/5">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 to-cyan-400/20 blur-sm rounded-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/60 to-cyan-500/60 p-0 rounded-none">
+                  <div className="w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-black p-0 rounded-none">
+                    <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-emerald-400/5 to-cyan-400/5">
                       <Image
                         src="/image.png"
                         alt="Ingabire Belyse Professional Portrait"
                         fill
-                        style={{ objectFit: "cover" }}
-                        className="rounded-lg sm:rounded-xl lg:rounded-2xl"
+                        className="w-full h-auto object-cover"
                         priority
-                        sizes="(max-width: 480px) 250px, (max-width: 768px) 350px, (max-width: 1024px) 450px, 600px"
+                        sizes="100vw"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-lg sm:rounded-xl lg:rounded-2xl"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
                     </div>
                   </div>
                 </div>
               </div>
-
-            
-              <div className="absolute -right-1 top-1/4 bg-gradient-to-r from-emerald-500 to-cyan-500 backdrop-blur-sm rounded-md p-1 sm:p-2 border border-emerald-400/50 shadow-lg">
+              {/* Floating Labels */}
+              <div className="absolute -right-1 top-1/4 bg-gradient-to-r from-emerald-500 to-cyan-500 backdrop-blur-sm rounded-md p-2 border border-emerald-400/50 shadow-lg">
                 <div className="text-center">
                   <div className="text-xs sm:text-sm md:text-lg font-bold text-black">10+</div>
                   <div className="text-[10px] sm:text-xs text-black/80">Projects</div>
                 </div>
               </div>
 
-              <div className="absolute -left-1 bottom-1/4 bg-black/90 backdrop-blur-sm rounded-md p-1 sm:p-2 border border-cyan-400/50 shadow-lg">
+              <div className="absolute -left-1 bottom-1/4 bg-black/90 backdrop-blur-sm rounded-md p-2 border border-cyan-400/50 shadow-lg">
                 <div className="text-center">
                   <div className="text-xs sm:text-sm md:text-lg font-bold text-cyan-400">1+</div>
                   <div className="text-[10px] sm:text-xs text-gray-300">Years</div>
                 </div>
               </div>
 
-             
               <div className="absolute top-1/2 -right-1 sm:-right-2 w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full animate-bounce delay-500"></div>
               <div className="absolute top-1/3 -left-1 sm:-left-2 w-2 h-2 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-full animate-bounce delay-700"></div>
               <div className="absolute bottom-1/2 right-1/4 w-2 h-2 bg-emerald-400/60 rounded-full animate-ping delay-300"></div>
             </div>
           </div>
 
-         
+          {/* TEXT SIDE */}
           <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
             <div
               className={`space-y-4 sm:space-y-6 transform transition-all duration-1000 delay-500 ${
@@ -123,14 +111,17 @@ const About = () => {
               }`}
             >
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-                I&#39;m <span className="text-teal-500 font-semibold">Ingabire Belyse</span>, a passionate Web Developer and UI/UX Designer based in{" "}
+                I&#39;m <span className="text-teal-500 font-semibold">Ingabire Belyse</span>, a
+                passionate Web Developer and UI/UX Designer based in{" "}
                 <span className="text-teal-700 font-semibold">Kigali, Rwanda</span>.
               </p>
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-                Currently pursuing a degree in Software Engineering at AUCA, I combine academic learning with hands-on experience to grow as a creative, impact-driven developer.
+                Currently pursuing a degree in Software Engineering at AUCA, I combine academic
+                learning with hands-on experience to grow as a creative, impact-driven developer.
               </p>
               <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
-                My skills span the entire web development process—from crafting clean, engaging user interfaces to building responsive, high-performance applications.
+                My skills span the entire web development process—from crafting clean, engaging
+                user interfaces to building responsive, high-performance applications.
               </p>
             </div>
 

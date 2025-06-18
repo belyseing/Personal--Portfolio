@@ -7,7 +7,6 @@ const Skills: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
 
-
   const [dots, setDots] = useState<
     { left: string; top: string; animationDelay: string; animationDuration: string }[]
   >([]);
@@ -23,7 +22,6 @@ const Skills: React.FC = () => {
     const currentRef = sectionRef.current;
     if (currentRef) observer.observe(currentRef);
 
-  
     const generatedDots = Array.from({ length: 20 }).map(() => ({
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
@@ -123,14 +121,22 @@ const Skills: React.FC = () => {
     <section
       id="skills"
       ref={sectionRef}
-      className="relative py-20 scroll-mt-20 text-white overflow-hidden px-4 sm:px-6 lg:px-8 flex justify-start items-start lg:justify-center lg:items-center"
+      className="relative py-20 scroll-mt-20 text-white overflow-hidden px-4 sm:px-6 lg:px-8 flex justify-start items-start lg:justify-center lg:items-center bg-gradient-to-br from-gray-900 via-slate-800 to-gray-950"
     >
-     
-      <div className="absolute inset-0 bg-gray-950"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(139,69,19,0.15),transparent)] opacity-60 animate-pulse"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(75,85,99,0.2),transparent)] opacity-40"></div>
+      {/* New Background layers */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,from-teal-900/20,via-transparent,to-transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,from-indigo-800/15,via-transparent,to-transparent)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,from-emerald-800/18,via-transparent,to-transparent)]" />
+      <div
+        className="absolute inset-0 opacity-10"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px)",
+          backgroundSize: "30px 30px",
+        }}
+      />
 
-     
+      {/* Keep your dots if you want */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {dots.map((dot, i) => (
           <div
@@ -146,7 +152,7 @@ const Skills: React.FC = () => {
         ))}
       </div>
 
-     
+      {/* Content */}
       <div className="relative z-10 max-w-7xl w-full">
         {/* Header */}
         <div className="text-center mb-16">
@@ -174,7 +180,6 @@ const Skills: React.FC = () => {
 
         {/* Skills grid */}
         <div className="flex flex-col lg:flex-row gap-8 items-start">
-         
           <div className="w-full lg:w-2/3">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -219,7 +224,6 @@ const Skills: React.FC = () => {
             </motion.div>
           </div>
 
-         
           <div className="w-full lg:w-1/3">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
@@ -246,7 +250,6 @@ const Skills: React.FC = () => {
           </div>
         </div>
 
-      
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
