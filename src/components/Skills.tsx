@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 const Skills: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement | null>(null);
+
 
   const [dots, setDots] = useState<
     { left: string; top: string; animationDelay: string; animationDuration: string }[]
@@ -22,6 +23,7 @@ const Skills: React.FC = () => {
     const currentRef = sectionRef.current;
     if (currentRef) observer.observe(currentRef);
 
+  
     const generatedDots = Array.from({ length: 20 }).map(() => ({
       left: `${Math.random() * 100}%`,
       top: `${Math.random() * 100}%`,
@@ -40,25 +42,25 @@ const Skills: React.FC = () => {
     {
       category: "Frontend Development",
       skills: [
-        { name: 'HTML5/CSS3', proficiency: 98 },
-        { name: 'JavaScript', proficiency: 90 },
-        { name: 'Tailwind CSS', proficiency: 98 },
-        { name: 'React.js', proficiency: 90 },
-        { name: 'Next.js', proficiency: 80 },
-        { name: 'TypeScript', proficiency: 85 },
-      ]
+        { name: "HTML5/CSS3", proficiency: 98 },
+        { name: "JavaScript", proficiency: 90 },
+        { name: "Tailwind CSS", proficiency: 98 },
+        { name: "React.js", proficiency: 90 },
+        { name: "Next.js", proficiency: 80 },
+        { name: "TypeScript", proficiency: 85 },
+      ],
     },
     {
       category: "Tools & Technologies",
       skills: [
-        { name: 'Git/GitHub', proficiency: 95 },
-        { name: 'Figma', proficiency: 90 },
-        { name: 'Firebase', proficiency: 80 },
-        { name: 'MongoDB', proficiency: 65 },
-        { name: 'Vercel/Netlify', proficiency: 90 },
-        { name: 'Node.js', proficiency: 70 },
-      ]
-    }
+        { name: "Git/GitHub", proficiency: 95 },
+        { name: "Figma", proficiency: 90 },
+        { name: "Firebase", proficiency: 80 },
+        { name: "MongoDB", proficiency: 65 },
+        { name: "Vercel/Netlify", proficiency: 90 },
+        { name: "Node.js", proficiency: 70 },
+      ],
+    },
   ];
 
   const professionalSkills = [
@@ -78,40 +80,57 @@ const Skills: React.FC = () => {
       description: "Strategize and innovate, turning ideas into clear, actionable plans.",
       icon: (
         <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1.5-1.5L6 20l-.75-3m9-3h4.5m-12-6h4.5m4.5 6h4.5m-12-6h4.5M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9.75 17L9 20l-1.5-1.5L6 20l-.75-3m9-3h4.5m-12-6h4.5m4.5 6h4.5m-12-6h4.5M3 12a9 9 0 1118 0 9 9 0 01-18 0z"
+          />
         </svg>
-      )
+      ),
     },
     {
       title: "Design",
       description: "Create stunning, user-centric interfaces with seamless experiences.",
       icon: (
         <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+          />
         </svg>
-      )
+      ),
     },
     {
       title: "Develop",
       description: "Build fast, scalable apps with cutting-edge tech and precision.",
       icon: (
         <svg className="w-8 h-8 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+          />
         </svg>
-      )
-    }
+      ),
+    },
   ];
 
   return (
     <section
       id="skills"
       ref={sectionRef}
-      className="relative py-20 flex items-start justify-start md:items-center md:justify-center p-6 scroll-mt-20 text-white overflow-hidden pl-10"
+      className="relative py-20 scroll-mt-20 text-white overflow-hidden px-4 sm:px-6 lg:px-8 flex justify-start items-start lg:justify-center lg:items-center"
     >
-      <div className="absolute inset-0 bg-gradient-to-br bg-gray-950"></div>
+     
+      <div className="absolute inset-0 bg-gray-950"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(139,69,19,0.15),transparent)] opacity-60 animate-pulse"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(75,85,99,0.2),transparent)] opacity-40"></div>
 
+     
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {dots.map((dot, i) => (
           <div
@@ -127,7 +146,9 @@ const Skills: React.FC = () => {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+     
+      <div className="relative z-10 max-w-7xl w-full">
+        {/* Header */}
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 10 }}
@@ -151,13 +172,15 @@ const Skills: React.FC = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
+        {/* Skills grid */}
+        <div className="flex flex-col lg:flex-row gap-8 items-start">
+         
+          <div className="w-full lg:w-2/3">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="bg-gray-900 rounded-2xl shadow-xl p-8"
+              className="bg-gray-900 rounded-2xl shadow-xl p-8 lg:ml-8"
             >
               <h3 className="text-2xl font-bold text-white mb-8">Technical Skills</h3>
               <div className="space-y-8">
@@ -167,7 +190,7 @@ const Skills: React.FC = () => {
                       {category.category}
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {technicalSkills[categoryIndex].skills.map((skill, skillIndex) => (
+                      {category.skills.map((skill, skillIndex) => (
                         <motion.div
                           key={skillIndex}
                           initial={{ opacity: 0, x: -20 }}
@@ -196,7 +219,8 @@ const Skills: React.FC = () => {
             </motion.div>
           </div>
 
-          <div>
+         
+          <div className="w-full lg:w-1/3">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
@@ -222,6 +246,7 @@ const Skills: React.FC = () => {
           </div>
         </div>
 
+      
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
@@ -236,29 +261,26 @@ const Skills: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-cyan-400/20 blur-3xl opacity-30 -z-10"></div>
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto relative">
-            {buildSteps.map((step, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.9 }}
-                transition={{ duration: 1, delay: 0.9 + index * 0.3, type: 'spring', stiffness: 100 }}
-                whileHover={{ scale: 1.05, rotate: 2, boxShadow: '0 0 20px rgba(56, 189, 248, 0.7)' }}
-                className="relative bg-gray-900/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl transition-all duration-300 border border-teal-400/30 hover:border-teal-400/70"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-teal-400/10 to-cyan-400/10 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                <div className="flex items-center justify-center mb-6 w-12 h-12 bg-teal-400/20 rounded-full mx-auto">
-                  {step.icon}
-                </div>
-                <h4 className="text-xl font-bold text-white mb-4 text-center">{step.title}</h4>
-                <p className="text-gray-300 text-sm leading-relaxed text-center">
-                  {step.description}
-                </p>
-                {index < buildSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-1 bg-teal-400/50 rounded-full transform -translate-y-1/2 animate-pulse"></div>
-                )}
-              </motion.div>
-            ))}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+              {buildSteps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
+                  animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 20, scale: 0.9 }}
+                  transition={{ duration: 1, delay: 0.9 + index * 0.3, type: "spring", stiffness: 100 }}
+                  whileHover={{ scale: 1.05, rotate: 2 }}
+                  className="relative bg-gray-900/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl transition-all duration-300 border border-teal-400/30 hover:border-teal-400/70"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-400/10 to-cyan-400/10 opacity-0 hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                  <div className="flex items-center justify-center mb-6 w-12 h-12 bg-teal-400/20 rounded-full mx-auto">
+                    {step.icon}
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-4 text-center">{step.title}</h4>
+                  <p className="text-gray-300 text-sm leading-relaxed text-center">{step.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>

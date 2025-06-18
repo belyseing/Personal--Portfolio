@@ -27,23 +27,21 @@ const About = () => {
     };
   }, []);
 
-  
-
   return (
     <section
       ref={sectionRef}
       className="min-h-screen relative overflow-hidden pl-6 py-20 "
       id="about"
     >
-      {/* Background gradients */}
+     
       <div className="absolute inset-0 bg-gradient-to-br from-black to-gray-900">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(0,255,127,0.1),transparent_60%)] opacity-30"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(0,191,255,0.05),transparent_60%)] opacity-20"></div>
       </div>
 
-      {/* Removed container and horizontal padding to start content from corner */}
+ 
       <div className="relative z-10">
-        {/* Heading */}
+       
         <div className="mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-6 lg:px-8 text-center">
           <div
             className={`transform transition-all duration-1000 ${
@@ -61,18 +59,18 @@ const About = () => {
           </div>
         </div>
 
-        {/* Main content grid */}
+       
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-20 items-center px-4 sm:px-6 lg:px-8">
-          {/* Image and circles */}
+         
           <div
             className={`relative transform transition-all duration-1000 delay-300 order-2 lg:order-1 ${
               isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
             }`}
           >
             <div className="relative w-full max-w-[250px] sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto">
-              {/* Top-right circle */}
+            
               <div className="absolute -top-2 -right-2 w-12 h-12 sm:w-16 sm:h-16 md:w-24 md:h-24 bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 rounded-full blur-xl animate-pulse"></div>
-              {/* Bottom-left circle */}
+             
               <div className="absolute -bottom-2 -left-2 w-14 h-14 sm:w-20 sm:h-20 md:w-28 md:h-28 bg-gradient-to-r from-cyan-400/10 to-emerald-400/10 rounded-full blur-2xl animate-pulse delay-1000"></div>
 
               <div className="relative w-full aspect-square">
@@ -95,7 +93,7 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Stats badges */}
+            
               <div className="absolute -right-1 top-1/4 bg-gradient-to-r from-emerald-500 to-cyan-500 backdrop-blur-sm rounded-md p-1 sm:p-2 border border-emerald-400/50 shadow-lg">
                 <div className="text-center">
                   <div className="text-xs sm:text-sm md:text-lg font-bold text-black">10+</div>
@@ -110,14 +108,14 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Animated dots */}
+             
               <div className="absolute top-1/2 -right-1 sm:-right-2 w-2 h-2 sm:w-3 sm:h-3 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full animate-bounce delay-500"></div>
               <div className="absolute top-1/3 -left-1 sm:-left-2 w-2 h-2 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-full animate-bounce delay-700"></div>
               <div className="absolute bottom-1/2 right-1/4 w-2 h-2 bg-emerald-400/60 rounded-full animate-ping delay-300"></div>
             </div>
           </div>
 
-          {/* Text content */}
+         
           <div className="space-y-6 sm:space-y-8 order-1 lg:order-2">
             <div
               className={`space-y-4 sm:space-y-6 transform transition-all duration-1000 delay-500 ${
@@ -141,8 +139,10 @@ const About = () => {
                 isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
               }`}
             >
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4 text-center sm:text-left">Core Expertise</h3>
-              <div className="grid grid-cols-3 sm:grid-cols-2 gap-3 sm:gap-4 justify-items-center sm:justify-items-start">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
+                Core Expertise
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {[
                   "Frontend Development",
                   "React & Next.js",
@@ -151,9 +151,9 @@ const About = () => {
                   "TypeScript",
                   "Node.js & APIs",
                 ].map((skill) => (
-                  <div key={skill} className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full flex-shrink-0 mt-1.5"></div>
-                    <span className="text-gray-400 text-sm sm:text-base leading-tight">{skill}</span>
+                  <div key={skill} className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-full flex-shrink-0"></div>
+                    <span className="text-gray-400 text-base leading-tight">{skill}</span>
                   </div>
                 ))}
               </div>
@@ -187,7 +187,6 @@ const About = () => {
         </div>
       </div>
 
-      
       <style jsx>{`
         @keyframes fade-in-up {
           from {

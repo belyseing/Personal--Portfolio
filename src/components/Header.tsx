@@ -14,6 +14,7 @@ const navigationItems = [
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [hoveredSection, setHoveredSection] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => {
@@ -52,6 +53,9 @@ const Header: React.FC = () => {
     };
   }, []);
 
+
+  const currentHighlight = hoveredSection ?? activeSection;
+
   return (
     <header
       className={`fixed top-0 w-full z-50 py-2 transition-all duration-300 ${
@@ -61,7 +65,7 @@ const Header: React.FC = () => {
       }`}
     >
       <div className="w-full flex justify-between items-center px-4 sm:pl-16">
-        {/* Logo Section */}
+    
         <div className="flex items-center group cursor-pointer">
           <div className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-lg flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
             <span className="text-black font-bold text-sm">IB</span>
@@ -71,97 +75,100 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Desktop Navigation */}
+   
         <nav role="navigation" className="hidden lg:flex items-center space-x-8">
-          {navigationItems.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              onClick={() => handleNavClick(item.href)}
-              aria-current={
-                activeSection === item.href.substring(1) ? "page" : undefined
-              }
-              className={`relative text-sm font-medium transition-all duration-300 hover:text-emerald-300 ${
-                activeSection === item.href.substring(1)
-                  ? "text-emerald-400"
-                  : "text-gray-300"
-              }`}
-            >
-              {item.name}
-              <span
-                className={`absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 transform origin-left transition-transform duration-300 ${
-                  activeSection === item.href.substring(1)
-                    ? "scale-x-100"
-                    : "scale-x-0 hover:scale-x-100"
-                }`}
-              />
-            </a>
-          ))}
+          {navigationItems.map((item) => {
+            const isActive = currentHighlight === item.href.substring(1);
+            return (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={() => handleNavClick(item.href)}
+                onMouseEnter={() => setHoveredSection(item.href.substring(1))}
+                onMouseLeave={() => setHoveredSection(null)}
+                aria-current={isActive ? "page" : undefined}
+                className={`relative text-sm font-medium transition-all duration-300 cursor-pointer
+                  hover:text-emerald-300 ${
+                    isActive ? "text-emerald-400" : "text-gray-300"
+                  }`}
+              >
+                {item.name}
+                <span
+                  className={`absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-emerald-400 to-cyan-400 transform origin-left transition-transform duration-300 ${
+                    isActive ? "scale-x-100" : "scale-x-0 hover:scale-x-100"
+                  }`}
+                />
+              </a>
+            );
+          })}
         </nav>
 
-        {/* Resume Button Desktop */}
+        
         <a
           href="/Belyse's resume.pdf"
           download
-          className="hidden lg:flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 group"
+          className="hidden lg:flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 group cursor-pointer"
         >
           <Download className="w-4 h-4 mr-2" />
           <span>Resume</span>
         </a>
 
-        {/* Menu Toggle Button Mobile */}
+       
         <button
           onClick={toggleMenu}
-          className="lg:hidden w-10 h-10 flex items-center justify-center text-white hover:text-emerald-400 transition-colors duration-300"
+          className="lg:hidden w-10 h-10 flex items-center justify-center text-white hover:text-emerald-400 transition-colors duration-300 cursor-pointer"
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Navigation */}
+     
       <div
-        className={`lg:hidden absolute top-full left-0 w-full backdrop-blur-xl border-b border-gray-900/80 transition-all duration-300 ${
+        className={`lg:hidden absolute top-full left-0 w-full border-b border-gray-900/80 transition-all duration-300 z-50 ${
           isMenuOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-4 pointer-events-none"
-        }`}
-        style={{ background: "rgba(10, 10, 10, 0.9)" }}
+        } bg-gradient-to-r from-cyan-950  to-cyan-900`}
       >
         <nav role="navigation" className="container mx-auto px-6 py-6">
           <ul className="space-y-4">
-            {navigationItems.map((item) => (
-              <li key={item.name}>
-                <a
-                  href={item.href}
-                  onClick={() => handleNavClick(item.href)}
-                  aria-current={
-                    activeSection === item.href.substring(1) ? "page" : undefined
-                  }
-                  className={`block text-lg font-medium transition-all duration-300 hover:text-emerald-300 hover:translate-x-2 ${
-                    activeSection === item.href.substring(1)
-                      ? "text-emerald-400"
-                      : "text-gray-300"
-                  }`}
-                >
-                  {item.name}
-                </a>
-              </li>
-            ))}
+            {navigationItems.map((item) => {
+              const isActive = activeSection === item.href.substring(1);
+              return (
+                <li key={item.name}>
+                  <a
+                    href={item.href}
+                    onClick={() => handleNavClick(item.href)}
+                    aria-current={isActive ? "page" : undefined}
+                    className={`block text-lg font-medium transition-all duration-300 py-2 px-3 rounded-lg cursor-pointer
+                      ${
+                        isActive
+                          ? "text-emerald-300 bg-black/20 shadow-lg"
+                          : "text-white hover:text-emerald-600 hover:bg-black/10 active:bg-black/20 active:scale-95"
+                      } 
+                      hover:scale-105 hover:shadow-md`}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           <a
-            href="/belyse's resume.pdf"
-            download
-            className="mt-6 block text-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-semibold rounded-lg shadow-lg group"
-          >
-            <span className="flex justify-center items-center gap-2">
-              <Download className="w-4 h-4" />
-              Resume
-            </span>
-          </a>
-        </nav>
-      </div>
+     href="/belyse's resume.pdf"
+     download
+    className="mt-6 block text-center px-2 py-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-semibold rounded-lg shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 hover:shadow-xl lg:px-4"
+    >
+    <span className="flex justify-center items-center gap-2">
+    <Download className="w-4 h-4" />
+    Resume
+  </span>
+   </a>
+
+    </nav>
+    </div>
     </header>
   );
 };

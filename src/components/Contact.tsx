@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
     };
   }, []);
 
-  // Generate animated dots (from footer)
+
   useEffect(() => {
     const generatedDots = Array.from({ length: 15 }).map(() => ({
       left: `${Math.random() * 100}%`,
@@ -293,7 +293,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Contact info */}
+          
           <div className="md:w-2/5 md:mt-20">
             <div className="bg-gray-800 p-8 rounded-lg shadow-md">
               <h3

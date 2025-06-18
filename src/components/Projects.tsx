@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
@@ -79,7 +78,8 @@ const Projects: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(0,191,255,0.05),transparent_60%)] opacity-20"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      
+      <div className="container px-6 relative z-10 md:ml-10 md:max-w-[90%]">
         <div
           className={`text-center mb-20 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
