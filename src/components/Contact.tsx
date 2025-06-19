@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Animated dots state (from footer)
+
   const [dots, setDots] = useState<
     { left: string; top: string; animationDelay: string; animationDuration: string }[]
   >([]);

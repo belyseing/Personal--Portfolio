@@ -123,7 +123,7 @@ const Skills: React.FC = () => {
       ref={sectionRef}
       className="relative py-20 scroll-mt-20 text-white overflow-hidden px-4 sm:px-6 lg:px-8 flex justify-start items-start lg:justify-center lg:items-center bg-gradient-to-br from-gray-900 via-slate-800 to-gray-950"
     >
-      {/* New Background layers */}
+     
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,from-teal-900/20,via-transparent,to-transparent)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,from-indigo-800/15,via-transparent,to-transparent)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,from-emerald-800/18,via-transparent,to-transparent)]" />
@@ -136,7 +136,7 @@ const Skills: React.FC = () => {
         }}
       />
 
-      {/* Keep your dots if you want */}
+      
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {dots.map((dot, i) => (
           <div
@@ -185,7 +185,7 @@ const Skills: React.FC = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="bg-gray-900 rounded-2xl shadow-xl p-8 lg:ml-8"
+              className="bg-gray-700 rounded-2xl shadow-xl p-8 lg:ml-8"
             >
               <h3 className="text-2xl font-bold text-white mb-8">Technical Skills</h3>
               <div className="space-y-8">
@@ -229,7 +229,7 @@ const Skills: React.FC = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="bg-gray-900 rounded-2xl shadow-xl p-8 mb-8"
+              className="bg-gray-700 rounded-2xl shadow-xl p-8 mb-8"
             >
               <h3 className="text-2xl font-bold text-white mb-6">Professional Skills</h3>
               <div className="space-y-3">
@@ -239,7 +239,7 @@ const Skills: React.FC = () => {
                     initial={{ opacity: 0, x: 20 }}
                     animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }}
                     transition={{ duration: 1, delay: 0.6 + index * 0.2 }}
-                    className="flex items-center p-3 bg-teal-600/10 rounded-lg"
+                    className="flex items-center p-3 bg-teal-600/20 rounded-lg"
                   >
                     <div className="w-2 h-2 bg-teal-600 rounded-full mr-3"></div>
                     <span className="text-gray-300 font-medium">{skill}</span>
