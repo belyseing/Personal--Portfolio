@@ -61,7 +61,7 @@ const Footer = () => {
              
               <div className="flex items-center space-x-2 mb-6">
                 <div className="w-8 h-8 bg-teal-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">BI</span>
+                  <span className="text-white font-bold">IB</span>
                 </div>
                 <h3 className="text-gray-500 text-sm gap-6">Frontend Developer</h3>
               </div>
