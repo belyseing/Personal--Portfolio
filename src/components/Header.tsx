@@ -105,7 +105,7 @@ const Header: React.FC = () => {
 
         
         <a
-          href="/Belyse's resume.pdf"
+          href="/Belyse INGABIRE-Professional Resume.pdf"
           download
           className="hidden lg:flex items-center px-4 py-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-black font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 group cursor-pointer"
         >
